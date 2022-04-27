@@ -11,13 +11,16 @@
     <div>
         <nav>
             <%= link_to("Home", root_path) %>
+            <br>
             <% if @current_user.present? %>
                 <% if @current_user.admin?%>
                     <h1>hi admin</h1>
                 <% end %>
                 <%= link_to("sign out #{ @current_user.email }", login_path, :method=> 'delete') %>
+                <br>
             <% else %>
                 <%= link_to("Sign up", new_user_path) %>
+                <br>
                 <%= link_to("sign in", login_path) %>
             <% end %>
       
