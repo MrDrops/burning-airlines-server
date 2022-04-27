@@ -1,0 +1,26 @@
+<div>
+    <h1>
+        Burning Airlines
+    </h1>
+
+    <% if @current_user.present? %>
+    <h2>
+        Welcome back <%= @current_user.email %>
+    </h2>
+    <% end %>
+    <div>
+        <nav>
+            <%= link_to("Home", root_path) %>
+            <% if @current_user.present? %>
+                <% if @current_user.admin?%>
+                    <h1>hi admin</h1>
+                <% end %>
+                <%= link_to("sign out #{ @current_user.email }", login_path, :method=> 'delete') %>
+            <% else %>
+                <%= link_to("Sign up", new_user_path) %>
+                <%= link_to("sign in", login_path) %>
+            <% end %>
+      
+        </nav>
+    </div>
+</div>
