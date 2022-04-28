@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2cc4e94e06402d56de60e47b018c7a59f2da8a6e
 User.destroy_all
 u1 = User.create :name => 'Boss man', :email => 'daboss@burn.com', :password => 'chicken', :admin => true
 u2 = User.create :name => 'Ana Banana', :email => 'anaban@burn.com', :password => 'chicken', :admin => false
