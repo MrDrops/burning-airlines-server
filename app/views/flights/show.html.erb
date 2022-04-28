@@ -19,6 +19,10 @@
   <strong>Airplane:</strong>
   <%= @flight.airplane_id %>
 </p>
-
-<%= link_to 'Edit', edit_flight_path(@flight) %> |
+<% if @current_user.present? %>
+  <% if @current_user.admin?%>
+    <h1>hi admin</h1>
+    <%= link_to 'Edit', edit_flight_path(@flight) %>
+  <% end %>
+<% end %>
 <%= link_to 'Back', flights_path %>
